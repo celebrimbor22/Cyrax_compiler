@@ -1,0 +1,68 @@
+
+int i,j,k,f,y;
+double s,f,e,x,eu;
+void factorial():
+    if y>1:
+        f=f*y;
+        y=y- 1;
+        factorial();
+    end;
+endf;
+
+void exp():
+    e=1;
+    for i = 0; i<y;i++:
+        e= e * x;
+    end;
+
+endf;
+void euler():
+    eu=1;
+    x= read();
+    for i = 1; i<=10;i++:
+        y=i;
+        exp();
+        f=1;
+        factorial();
+        eu = eu +(e/f);
+    end;
+    write("El valor de e^x =");
+    write(eu);
+endf;
+
+void tres():
+    x=read();
+    y=read();
+    exp();
+    write("El valor de exp =");
+    write(e);
+endf;
+void dos():
+    f=1;
+    y= read();
+    factorial();
+    write("El valor del facotrial");
+    write(f);
+endf;
+main():
+    do:
+        write("Para calcular e -> [1]");
+        write("Para calcular x! ->[2]");
+        write("Para calcular x^y->[3]");
+        j = read();
+        /*
+            comentrarios!!!
+        */
+        if j == 1:
+            euler();
+        else: if j== 2:
+            dos();
+        else: if j==3:
+            tres();
+        end; end; end; end;
+        end;
+        write("Para salir ->[-1]");
+        k = read();
+    loop k !=-1 end;
+endf;
+

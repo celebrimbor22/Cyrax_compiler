@@ -1,0 +1,47 @@
+int v1[10];
+int a1,aux,i,j,tam,k,tam2,b3,flag;
+
+
+void printVec():
+    write("Valores del vector");
+    for i =0;i<tam;i++:
+        write(v1[i]);
+    end;
+endf;
+
+void llenarVec():
+    write("Introdusca los valores del vector");
+    for i =0;i<tam;i++:
+        aux = read();
+        v1[i] = aux;
+    end;
+endf;
+
+void sortV():
+    tam2 = tam - 1;
+    for i =0;i<tam2;i++:
+        aux = tam - i - 1;
+        for j=0;j<aux;j++:
+            k=j+1;
+            if v1[j] > v1[k] :
+                b3 = v1[j];
+                v1[j] = v1[k];
+                v1[k] = b3;
+            end;
+        end;
+    end;
+endf;
+
+main():
+    write("Introdusca la longitud del vector menor a 10");
+    tam = read();
+    do:
+        llenarVec();
+        printVec();
+        sortV();
+        write("print v1[] sort");
+        printVec();
+        write("[1] para ordenar otro vector");
+        flag = read();
+    loop flag == 1 end;
+endf;

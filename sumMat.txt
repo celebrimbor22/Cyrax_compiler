@@ -1,0 +1,55 @@
+int a1,b2, a2,b1;
+int m1[10][10];
+int m2[10][10];
+int m3[10][10];
+int x,y,z,i,j,k;
+
+void fullmatriz():
+    for i =0; i<a2; i++:
+        for j=0;j<b2;j++:
+            write("PRIMERA MATRIZ");
+            x = read();
+            m1[i][j] =x;
+            write("Segunda Matriz");
+            y = read();
+            y=m2[i][j];
+        end;
+    end;
+    write("salio");
+endf;
+
+
+void sumMatriz():
+    write("que pedo");
+    for i =0; i<a2; i++:
+        for j=0;j<b2;j++:
+            write(i);
+            write(j);
+          m3[i][j]= m2[i][j] + m1[i][j];
+          write(m3[i][j]);
+        end;
+    end;
+endf;
+
+main():
+    do:
+    write("int las dimenciones");
+        write("num filas m1");
+        a1 = read();
+        write("num filas m2");
+        a2 = read();
+        write("num columnas m1");
+        b1 = read();
+        write("num columnas m2");
+        b2 = read();
+    loop (a1 != a2) || (b1 != b2) end;
+    fullmatriz();
+    sumMatriz();
+
+    for i =0; i<a2; i++:
+        for j=0;j<b2;j++:
+        write(a[i][j]);
+        end;
+        write(" ");
+    end;
+endf;

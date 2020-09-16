@@ -1,0 +1,86 @@
+int m1[5][5];
+int m2[5][5];
+int m3[5][5];
+int i,j,a1,b1,b2,x,y,a2,k,sel,aux;
+
+
+void printMat():
+  write("Resultado");
+  for i=0;i<a1;i++:
+  write("------------");
+    for j=0;j<b1;j++:
+        write(m3[i][j]);
+    end;
+  end;
+endf;
+
+void fullMat():
+    write("valores de las matrices");
+    for i =0; i<a1; i++:
+        for j=0;j<b2;j++:
+            write("PRIMERA MATRIZ");
+            x = read();
+            m1[i][j] =x;
+            write("Segunda Matriz");
+            y = read();
+            m2[i][j]=y;
+        end;
+    end;
+endf;
+void addMat():
+    if (a1==a2) &&(b1==b2):
+        for i=0;i<a1;i++:
+            for j=0;j<b2;j++:
+                m3[i][j] = m1[i][j] + m2[i][j];
+            end;
+        end;
+        printMat();
+    else:
+        for i=0;i<5;i++:
+            write("Eror no es posible hacer la suma");
+        end;
+    end;
+    end;
+endf;
+
+void multMat():
+    if b1 == a2:
+        write("Es valida la mult");
+        for i=0; i<a1;i++:
+            for j=0;j<b2;j++:
+                for k=0;k<b1;k++:
+                   aux =(m1[i][k] * m2[k][j]);
+                   m3[i][j]=m3[i][j]+aux;
+                end;
+            end;
+        end;
+
+        printMat();
+    else:
+        write("Eror!! No es valida la mult");
+    end; end;
+endf;
+
+main():
+    write("Introdusca los limites de la matriz");
+    write("i de m1");
+    a1 = read();
+     write("j de m1");
+    b1 = read();
+    write("i de m2");
+    a2 = read();
+    write("j de m2");
+    b2 = read();
+    fullMat();
+    write("para multiplicar m1[][]*m2[][]....[1]");
+    write("para sumar m1[][]+m2[][]..........[2]");
+    sel = read();
+
+    if sel ==1:
+        multMat();
+    else: if sel == 2:
+        addMat();
+    end; end;
+    end;
+    k=read();
+endf;
